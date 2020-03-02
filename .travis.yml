@@ -1,0 +1,16 @@
+language: csharp 
+sudo: required 
+dist: xenial 
+dotnet: 3.1
+
+env:
+  - solution: Resize_Array_new/Resize_Array_new.sln
+
+before_build:
+  - nuget restore $solution
+
+build:
+  - dotnet build $solution
+
+script:
+  - dotnet test $solution
